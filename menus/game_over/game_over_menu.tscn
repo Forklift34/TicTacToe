@@ -1,0 +1,63 @@
+[gd_scene load_steps=8 format=3 uid="uid://us3a07ngnqgn"]
+
+[ext_resource type="Script" path="res://menus/game_over/game_over_menu.gd" id="1_4uwgd"]
+[ext_resource type="FontVariation" uid="uid://1wheus51x3rb" path="res://ui/kiddosy_font.tres" id="2_wra5o"]
+[ext_resource type="Theme" uid="uid://0wuv8to2qp77" path="res://ui/paper_game_theme.tres" id="3_1s4kk"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_krgm3"]
+bg_color = Color(0.976471, 0.976471, 0.976471, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.435294, 0.435294, 0.435294, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ioni6"]
+bg_color = Color(0.937255, 0.34902, 0.666667, 1)
+shadow_color = Color(0.329412, 0.0509804, 0.427451, 0.921569)
+shadow_size = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_arplx"]
+bg_color = Color(0.827451, 0.364706, 0.937255, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gqoqe"]
+bg_color = Color(0.556863, 0.211765, 0.854902, 1)
+
+[node name="game_over_menu" type="CanvasLayer"]
+script = ExtResource("1_4uwgd")
+
+[node name="game_over_panel" type="Panel" parent="."]
+offset_left = 74.0
+offset_top = 221.0
+offset_right = 324.0
+offset_bottom = 448.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_krgm3")
+
+[node name="result_label" type="Label" parent="."]
+offset_left = 92.0
+offset_top = 251.0
+offset_right = 304.0
+offset_bottom = 309.0
+theme_override_colors/font_color = Color(0.352941, 0.352941, 0.352941, 1)
+theme_override_fonts/font = ExtResource("2_wra5o")
+theme_override_font_sizes/font_size = 40
+text = "Player 1 wins"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="restart_button" type="Button" parent="."]
+offset_left = 110.0
+offset_top = 330.0
+offset_right = 285.0
+offset_bottom = 405.0
+theme = ExtResource("3_1s4kk")
+theme_override_styles/normal = SubResource("StyleBoxFlat_ioni6")
+theme_override_styles/hover = SubResource("StyleBoxFlat_arplx")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_gqoqe")
+text = "Play Again"
+
+[connection signal="pressed" from="restart_button" to="." method="_on_restart_button_pressed"]

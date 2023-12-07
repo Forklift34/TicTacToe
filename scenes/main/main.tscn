@@ -1,0 +1,158 @@
+[gd_scene load_steps=12 format=3 uid="uid://cxf0e03sj64kc"]
+
+[ext_resource type="Script" path="res://scenes/main/main.gd" id="1_oswks"]
+[ext_resource type="PackedScene" uid="uid://caoghujuksogm" path="res://scenes/assets/o.tscn" id="2_h78mi"]
+[ext_resource type="PackedScene" uid="uid://c26vscyn5viv1" path="res://scenes/assets/x.tscn" id="3_6ehjp"]
+[ext_resource type="PackedScene" uid="uid://cxm4xrbrakj1o" path="res://scenes/assets/win_line.tscn" id="4_xwv87"]
+[ext_resource type="PackedScene" uid="uid://b2jvuilndnena" path="res://scenes/assets/board.tscn" id="5_uj7fe"]
+[ext_resource type="FontVariation" uid="uid://1wheus51x3rb" path="res://ui/kiddosy_font.tres" id="6_aref6"]
+[ext_resource type="PackedScene" uid="uid://us3a07ngnqgn" path="res://menus/game_over/game_over_menu.tscn" id="7_7ytli"]
+[ext_resource type="Texture2D" uid="uid://drtc8rqaolsn3" path="res://assets/gear.png" id="8_rmn0l"]
+[ext_resource type="PackedScene" uid="uid://b1tu6anv8ltoi" path="res://menus/settings/settings_menu.tscn" id="9_bikca"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p8xjh"]
+bg_color = Color(1, 1, 1, 0)
+border_width_left = 1
+border_color = Color(0.588235, 0.588235, 0.588235, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hpo7d"]
+bg_color = Color(1, 1, 1, 0)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.27451, 0.27451, 0.27451, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_oswks")
+o_scene = ExtResource("2_h78mi")
+x_scene = ExtResource("3_6ehjp")
+winning_line_scene = ExtResource("4_xwv87")
+
+[node name="board" parent="." instance=ExtResource("5_uj7fe")]
+position = Vector2(679, 338)
+
+[node name="side_panel" type="Panel" parent="."]
+offset_left = 924.0
+offset_right = 1359.0
+offset_bottom = 677.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_p8xjh")
+
+[node name="next_player_label" type="Label" parent="side_panel"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 149.0
+offset_right = 416.0
+offset_bottom = 207.0
+theme_override_colors/font_color = Color(0.627451, 0.627451, 0.627451, 1)
+theme_override_fonts/font = ExtResource("6_aref6")
+theme_override_font_sizes/font_size = 40
+text = "Next Player:"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="next_player_panel" type="Panel" parent="side_panel"]
+layout_mode = 0
+offset_left = 143.0
+offset_top = 212.0
+offset_right = 293.0
+offset_bottom = 362.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_hpo7d")
+
+[node name="player1_label" type="Label" parent="side_panel"]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 409.0
+offset_right = 154.0
+offset_bottom = 467.0
+theme_override_colors/font_color = Color(0.627451, 0.627451, 0.627451, 1)
+theme_override_fonts/font = ExtResource("6_aref6")
+theme_override_font_sizes/font_size = 40
+text = "Player 1:"
+vertical_alignment = 1
+
+[node name="player1_score_label" type="Label" parent="side_panel"]
+layout_mode = 0
+offset_left = 158.0
+offset_top = 410.0
+offset_right = 291.0
+offset_bottom = 460.0
+theme_override_colors/font_color = Color(0.627451, 0.627451, 0.627451, 1)
+theme_override_fonts/font = ExtResource("6_aref6")
+theme_override_font_sizes/font_size = 40
+vertical_alignment = 1
+
+[node name="player2_label" type="Label" parent="side_panel"]
+layout_mode = 0
+offset_left = 11.0
+offset_top = 487.0
+offset_right = 153.0
+offset_bottom = 545.0
+theme_override_colors/font_color = Color(0.627451, 0.627451, 0.627451, 1)
+theme_override_fonts/font = ExtResource("6_aref6")
+theme_override_font_sizes/font_size = 40
+text = "Player 2:"
+vertical_alignment = 1
+
+[node name="player2_score_label" type="Label" parent="side_panel"]
+layout_mode = 0
+offset_left = 158.0
+offset_top = 488.0
+offset_right = 291.0
+offset_bottom = 538.0
+theme_override_colors/font_color = Color(0.627451, 0.627451, 0.627451, 1)
+theme_override_fonts/font = ExtResource("6_aref6")
+theme_override_font_sizes/font_size = 40
+vertical_alignment = 1
+
+[node name="tie_label" type="Label" parent="side_panel"]
+layout_mode = 0
+offset_left = 96.0
+offset_top = 564.0
+offset_right = 160.0
+offset_bottom = 622.0
+theme_override_colors/font_color = Color(0.627451, 0.627451, 0.627451, 1)
+theme_override_fonts/font = ExtResource("6_aref6")
+theme_override_font_sizes/font_size = 40
+text = "Tie:"
+vertical_alignment = 1
+
+[node name="tie_score_label" type="Label" parent="side_panel"]
+layout_mode = 0
+offset_left = 155.0
+offset_top = 565.0
+offset_right = 288.0
+offset_bottom = 615.0
+theme_override_colors/font_color = Color(0.627451, 0.627451, 0.627451, 1)
+theme_override_fonts/font = ExtResource("6_aref6")
+theme_override_font_sizes/font_size = 40
+vertical_alignment = 1
+
+[node name="game_over_menu" parent="." instance=ExtResource("7_7ytli")]
+process_mode = 3
+
+[node name="settings_button" type="TextureButton" parent="."]
+process_mode = 3
+custom_minimum_size = Vector2(50, 50)
+offset_left = 19.0
+offset_top = 590.0
+offset_right = 69.0
+offset_bottom = 640.0
+scale = Vector2(1.5, 1.5)
+texture_normal = ExtResource("8_rmn0l")
+
+[node name="settings_menu" parent="." instance=ExtResource("9_bikca")]
+offset = Vector2(475, 120)
+transform = Transform2D(1, 0, 0, 1, 475, 120)
+
+[connection signal="restart" from="game_over_menu" to="." method="_on_game_over_menu_restart"]
+[connection signal="pressed" from="settings_button" to="." method="_on_settings_button_pressed"]
+[connection signal="close" from="settings_menu" to="." method="_on_settings_menu_close"]
+[connection signal="keep_score" from="settings_menu" to="." method="_on_settings_menu_keep_score"]
+[connection signal="opponent" from="settings_menu" to="." method="_on_settings_menu_opponent"]
+[connection signal="reset_score" from="settings_menu" to="." method="_on_settings_menu_reset_score"]
+[connection signal="starter" from="settings_menu" to="." method="_on_settings_menu_starter"]

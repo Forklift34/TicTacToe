@@ -1,0 +1,178 @@
+[gd_scene load_steps=7 format=3 uid="uid://b1tu6anv8ltoi"]
+
+[ext_resource type="Script" path="res://menus/settings/settings_menu.gd" id="1_5cx26"]
+[ext_resource type="FontVariation" uid="uid://1wheus51x3rb" path="res://ui/kiddosy_font.tres" id="2_qhwnu"]
+[ext_resource type="Theme" uid="uid://0wuv8to2qp77" path="res://ui/paper_game_theme.tres" id="3_0xej1"]
+[ext_resource type="ButtonGroup" uid="uid://d0t5cldkfc7wv" path="res://menus/settings/opponent_button_group.tres" id="4_stth6"]
+[ext_resource type="ButtonGroup" uid="uid://ca7jurqbsxft" path="res://menus/settings/start_button_group.tres" id="5_vmv3o"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f6ksr"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.435294, 0.435294, 0.435294, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[node name="settings_menu" type="CanvasLayer"]
+process_mode = 3
+script = ExtResource("1_5cx26")
+
+[node name="settings_panel" type="Panel" parent="."]
+offset_right = 480.0
+offset_bottom = 450.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_f6ksr")
+
+[node name="close_button" type="Button" parent="."]
+offset_left = 420.0
+offset_top = 10.0
+offset_right = 470.0
+offset_bottom = 60.0
+theme = ExtResource("3_0xej1")
+text = "X"
+
+[node name="opponent_label" type="Label" parent="."]
+offset_left = 15.0
+offset_top = 24.0
+offset_right = 221.0
+offset_bottom = 69.0
+theme_override_colors/font_color = Color(0.352941, 0.352941, 0.352941, 1)
+theme_override_fonts/font = ExtResource("2_qhwnu")
+theme_override_font_sizes/font_size = 40
+text = "Opponent:"
+
+[node name="person_button" type="Button" parent="."]
+offset_left = 10.0
+offset_top = 90.0
+offset_right = 100.0
+offset_bottom = 130.0
+theme = ExtResource("3_0xej1")
+toggle_mode = true
+button_pressed = true
+button_group = ExtResource("4_stth6")
+text = "Person"
+
+[node name="easy_ai_button" type="Button" parent="."]
+offset_left = 110.0
+offset_top = 90.0
+offset_right = 210.0
+offset_bottom = 130.0
+theme = ExtResource("3_0xej1")
+toggle_mode = true
+button_group = ExtResource("4_stth6")
+text = "Toaster"
+
+[node name="medium_ai_button" type="Button" parent="."]
+offset_left = 220.0
+offset_top = 90.0
+offset_right = 335.0
+offset_bottom = 130.0
+theme = ExtResource("3_0xej1")
+toggle_mode = true
+button_group = ExtResource("4_stth6")
+text = "Roomba"
+
+[node name="hard_ai_button" type="Button" parent="."]
+offset_left = 345.0
+offset_top = 90.0
+offset_right = 465.0
+offset_bottom = 130.0
+theme = ExtResource("3_0xej1")
+toggle_mode = true
+button_group = ExtResource("4_stth6")
+text = "Megatron"
+
+[node name="who_starts_label" type="Label" parent="."]
+offset_left = 12.0
+offset_top = 145.0
+offset_right = 218.0
+offset_bottom = 203.0
+theme_override_colors/font_color = Color(0.352941, 0.352941, 0.352941, 1)
+theme_override_fonts/font = ExtResource("2_qhwnu")
+theme_override_font_sizes/font_size = 40
+text = "Who Starts:"
+
+[node name="circle_start_button" type="Button" parent="."]
+offset_left = 10.0
+offset_top = 205.0
+offset_right = 95.0
+offset_bottom = 245.0
+theme = ExtResource("3_0xej1")
+toggle_mode = true
+button_group = ExtResource("5_vmv3o")
+text = "Circle"
+
+[node name="winner_start_button" type="Button" parent="."]
+offset_left = 105.0
+offset_top = 205.0
+offset_right = 200.0
+offset_bottom = 245.0
+theme = ExtResource("3_0xej1")
+toggle_mode = true
+button_group = ExtResource("5_vmv3o")
+text = "Winner"
+
+[node name="loser_start_button" type="Button" parent="."]
+offset_left = 210.0
+offset_top = 205.0
+offset_right = 295.0
+offset_bottom = 245.0
+theme = ExtResource("3_0xej1")
+toggle_mode = true
+button_group = ExtResource("5_vmv3o")
+text = "Loser"
+
+[node name="alternate_start_button" type="Button" parent="."]
+offset_left = 305.0
+offset_top = 205.0
+offset_right = 430.0
+offset_bottom = 245.0
+theme = ExtResource("3_0xej1")
+toggle_mode = true
+button_pressed = true
+button_group = ExtResource("5_vmv3o")
+text = "Alternate"
+
+[node name="scoring_label" type="Label" parent="."]
+offset_left = 12.0
+offset_top = 274.0
+offset_right = 218.0
+offset_bottom = 332.0
+theme_override_colors/font_color = Color(0.352941, 0.352941, 0.352941, 1)
+theme_override_fonts/font = ExtResource("2_qhwnu")
+theme_override_font_sizes/font_size = 40
+text = "Scoring:"
+
+[node name="reset_score_button" type="Button" parent="."]
+offset_left = 10.0
+offset_top = 330.0
+offset_right = 160.0
+offset_bottom = 380.0
+theme = ExtResource("3_0xej1")
+text = "Reset"
+
+[node name="keep_score_button" type="Button" parent="."]
+offset_left = 170.0
+offset_top = 330.0
+offset_right = 320.0
+offset_bottom = 380.0
+theme = ExtResource("3_0xej1")
+toggle_mode = true
+button_pressed = true
+text = "Keep score"
+
+[connection signal="pressed" from="close_button" to="." method="_on_close_button_pressed"]
+[connection signal="pressed" from="person_button" to="." method="_on_person_button_pressed"]
+[connection signal="pressed" from="easy_ai_button" to="." method="_on_easy_ai_button_pressed"]
+[connection signal="pressed" from="medium_ai_button" to="." method="_on_medium_ai_button_pressed"]
+[connection signal="pressed" from="hard_ai_button" to="." method="_on_hard_ai_button_pressed"]
+[connection signal="pressed" from="circle_start_button" to="." method="_on_circle_start_button_pressed"]
+[connection signal="pressed" from="winner_start_button" to="." method="_on_winner_start_button_pressed"]
+[connection signal="pressed" from="loser_start_button" to="." method="_on_loser_start_button_pressed"]
+[connection signal="pressed" from="alternate_start_button" to="." method="_on_alternate_start_button_pressed"]
+[connection signal="pressed" from="reset_score_button" to="." method="_on_reset_score_button_pressed"]
+[connection signal="toggled" from="keep_score_button" to="." method="_on_keep_score_button_toggled"]

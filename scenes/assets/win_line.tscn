@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://cxm4xrbrakj1o"]
+
+[ext_resource type="Texture2D" uid="uid://fte4p8773k43" path="res://assets/winline-tp.png" id="1_yulb0"]
+
+[node name="win_line" type="Sprite2D"]
+texture = ExtResource("1_yulb0")

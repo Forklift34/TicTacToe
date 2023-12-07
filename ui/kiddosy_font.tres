@@ -1,0 +1,6 @@
+[gd_resource type="FontVariation" load_steps=2 format=3 uid="uid://1wheus51x3rb"]
+
+[ext_resource type="FontFile" uid="uid://cdmr2ojwf88xm" path="res://assets/KiddosyfreeRegular-GOEag.otf" id="1_hc0b7"]
+
+[resource]
+base_font = ExtResource("1_hc0b7")
